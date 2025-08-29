@@ -21,7 +21,10 @@ document.getElementById('botaoacessibilidade');
 const opcoesDeAcessibilidade =
 document.getElementById('opcoesacessibilidade');
  botaoDeAcessibilidade.addEventListener('click', () => {
+   opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
  botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+  const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+ botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado);
  opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
  })
    alternaContraste.addEventListener('click', function(){
